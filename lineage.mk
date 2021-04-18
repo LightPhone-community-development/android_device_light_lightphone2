@@ -15,33 +15,30 @@
 #
 
 # Boot animation
-TARGET_SCREEN_HEIGHT := 1080
-TARGET_SCREEN_WIDTH := 1920
-
-# Inherit 64-bit configs
-$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
+TARGET_SCREEN_HEIGHT := 600
+TARGET_SCREEN_WIDTH := 480
 
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_m.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_o_mr1.mk)
 
 # Inherit some common LineageOS stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 # Inherit device configuration
-$(call inherit-product, device/lenovo/kuntao/device.mk)
+$(call inherit-product, device/light/lightphone2/device.mk)
 
 # Device identifier. This must come after all inclusions
-PRODUCT_NAME := lineage_kuntao
-PRODUCT_DEVICE := kuntao
-PRODUCT_BRAND := Lenovo
-PRODUCT_MODEL := Lenovo P2a42
-PRODUCT_MANUFACTURER := LENOVO
+PRODUCT_NAME := lineage_lightphone2
+PRODUCT_DEVICE := lightphone2
+PRODUCT_BRAND := Light
+PRODUCT_MODEL := Light Lightphone2
+PRODUCT_MANUFACTURER := LIGHT
 
-PRODUCT_GMS_CLIENTID_BASE := android-lenovo
+PRODUCT_GMS_CLIENTID_BASE := android-light
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="kuntao_row-user 7.0 NRD90N P2a42_S251_171107_ROW release-keys" \
-    TARGET_DEVICE="P2a42"
+    PRIVATE_BUILD_DESC="LightPhone2-user 8.1.0 4101.0.A.0073 12091933 release-keys" \
+    TARGET_DEVICE="LightPhone2"
 
-BUILD_FINGERPRINT := Lenovo/kuntao_row/P2a42:7.0/NRD90N/P2a42_S251_171107_ROW:user/release-keys
+BUILD_FINGERPRINT := Light/LightPhone2/LightPhone2:8.1.0/4101.0.A.0077/06051434:user/release-keys

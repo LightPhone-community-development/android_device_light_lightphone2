@@ -44,17 +44,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     qcom.bluetooth.soc=smd \
     ro.qualcomm.bt.hci_transport=smd
 
-# Camera
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.vendor.camera.display.umax=1920x1080 \
-    persist.vendor.camera.display.lmax=1280x720 \
-    camera.lowpower.record.enable=1 \
-    vidc.enc.dcvs.extra-buff-count=2
-
-# Charger
-PRODUCT_PROPERTY_OVERRIDES += \
-    log.tag.smart_charger=W
-
 # CNE
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.cne.feature=1
@@ -64,7 +53,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.gralloc.enable_fb_ubwc=1 \
     ro.opengles.version=196610 \
     ro.qualcomm.cabl=0 \
-    ro.sf.lcd_density=480
+    ro.sf.lcd_density=240
 
 # DRM
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -72,13 +61,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Factory reset protection
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.frp.pst=/dev/block/platform/soc/7824900.sdhci/by-name/config
-
-# Fingerprint
-PRODUCT_PROPERTY_OVERRIDES += \
-    log.tag.synaFpHal=W \
-    log.tag.SynapticsLIB=W \
-    log.tag.synaTransport=W
+    ro.frp.pst=/dev/block/bootdevice/by-name/config
 
 # GPS
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -86,7 +69,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
-media.stagefright.audio.sink=280 \
+    media.stagefright.audio.sink=280 \
     vendor.vidc.dec.downscalar_width=1920 \
     vendor.vidc.dec.downscalar_height=1088 \
     vendor.vidc.disable.split.mode=1 \
@@ -100,7 +83,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Radio
 PRODUCT_PROPERTY_OVERRIDES += \
-    rild.libpath=/vendor/lib64/libril-qc-qmi-1.so \
+    rild.libpath=/vendor/lib/libril-qc-qmi-1.so \
     persist.radio.apm_sim_not_pwdn=1 \
     persist.radio.multisim.config=dsds \
     ro.telephony.default_network=9,1 \
@@ -113,7 +96,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Security patch level
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vendor.build.security_patch=2017-11-01
+    ro.vendor.build.security_patch=2019-10-05
 
 # Time services
 PRODUCT_PROPERTY_OVERRIDES += \

@@ -18,20 +18,20 @@
         </interface>
     </hal>
     <hal format="hidl">
-        <name>android.hardware.biometrics.fingerprint</name>
-        <transport>hwbinder</transport>
-        <version>2.1</version>
-        <interface>
-            <name>IBiometricsFingerprint</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl">
         <name>android.hardware.bluetooth</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
         <interface>
             <name>IBluetoothHci</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
+        <name>android.hardware.broadcastradio</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IBroadcastRadioFactory</name>
             <instance>default</instance>
         </interface>
     </hal>
@@ -69,10 +69,12 @@
         <interface>
             <name>ICryptoFactory</name>
             <instance>default</instance>
+            <instance>widevine</instance>
         </interface>
         <interface>
             <name>IDrmFactory</name>
             <instance>default</instance>
+            <instance>widevine</instance>
         </interface>
     </hal>
     <hal format="hidl">
@@ -91,7 +93,6 @@
         <interface>
             <name>IGnss</name>
             <instance>default</instance>
-            <instance>gnss_vendor</instance>
         </interface>
     </hal>
     <hal format="hidl">
@@ -171,15 +172,6 @@
         </interface>
     </hal>
     <hal format="hidl">
-        <name>android.hardware.nfc</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>INfc</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl">
         <name>android.hardware.power</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
@@ -195,12 +187,10 @@
         <interface>
             <name>IRadio</name>
             <instance>slot1</instance>
-            <instance>slot2</instance>
         </interface>
         <interface>
             <name>ISap</name>
             <instance>slot1</instance>
-            <instance>slot2</instance>
         </interface>
     </hal>
     <hal format="hidl">
@@ -210,7 +200,6 @@
         <interface>
             <name>IOemHook</name>
             <instance>slot1</instance>
-            <instance>slot2</instance>
         </interface>
     </hal>
     <hal format="hidl">
@@ -219,15 +208,6 @@
         <version>1.0</version>
         <interface>
             <name>IDevice</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl">
-        <name>android.hardware.sensors</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>ISensors</name>
             <instance>default</instance>
         </interface>
     </hal>
@@ -295,6 +275,24 @@
         </interface>
     </hal>
     <hal format="hidl">
+        <name>com.qualcomm.qti.imscmservice</name>
+        <transport>hwbinder</transport>
+        <version>1.1</version>
+        <interface>
+            <name>IImsCmService</name>
+            <instance>qti.ims.connectionmanagerservice</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
+        <name>com.qualcomm.qti.uceservice</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IUceService</name>
+            <instance>com.qualcomm.qti.uceservice</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
         <name>com.quicinc.cne.api</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
@@ -306,10 +304,28 @@
     <hal format="hidl">
         <name>com.quicinc.cne.server</name>
         <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IServer</name>
+            <instance>cnd</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
+        <name>com.quicinc.cne.server</name>
+        <transport>hwbinder</transport>
         <version>2.0</version>
         <interface>
             <name>IServer</name>
             <instance>cnd</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.display.color</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IDisplayColor</name>
+            <instance>default</instance>
         </interface>
     </hal>
     <hal format="hidl">
@@ -358,11 +374,33 @@
         </interface>
     </hal>
     <hal format="hidl">
+        <name>vendor.qti.hardware.fm</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IFmHci</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
         <name>vendor.qti.hardware.perf</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
         <interface>
             <name>IPerf</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.qti.hardware.qteeconnector</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IAppConnector</name>
+            <instance>default</instance>
+        </interface>
+        <interface>
+            <name>IGPAppConnector</name>
             <instance>default</instance>
         </interface>
     </hal>
@@ -373,7 +411,6 @@
         <interface>
             <name>IQcRilAudio</name>
             <instance>slot1</instance>
-            <instance>slot2</instance>
         </interface>
     </hal>
     <hal format="hidl">
@@ -386,13 +423,22 @@
         </interface>
     </hal>
     <hal format="hidl">
+        <name>vendor.qti.hardware.radio.config</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IConfig</name>
+            <instance>radioconfig0</instance>
+            <instance>radioconfig1</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
         <name>vendor.qti.hardware.radio.ims</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
         <interface>
             <name>IImsRadio</name>
             <instance>imsradio0</instance>
-            <instance>imsradio1</instance>
         </interface>
     </hal>
     <hal format="hidl">
@@ -411,7 +457,6 @@
         <interface>
             <name>IQtiOemHook</name>
             <instance>oemhook0</instance>
-            <instance>oemhook1</instance>
         </interface>
     </hal>
     <hal format="hidl">
@@ -421,7 +466,6 @@
         <interface>
             <name>IQtiRadio</name>
             <instance>slot1</instance>
-            <instance>slot2</instance>
         </interface>
     </hal>
     <hal format="hidl">
@@ -431,7 +475,6 @@
         <interface>
             <name>IUim</name>
             <instance>Uim0</instance>
-            <instance>Uim1</instance>
         </interface>
     </hal>
     <hal format="hidl">
@@ -441,7 +484,6 @@
         <interface>
             <name>IUimRemoteServiceClient</name>
             <instance>uimRemoteClient0</instance>
-            <instance>uimRemoteClient1</instance>
         </interface>
     </hal>
     <hal format="hidl">
@@ -451,7 +493,15 @@
         <interface>
             <name>IUimRemoteServiceServer</name>
             <instance>uimRemoteServer0</instance>
-            <instance>uimRemoteServer1</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.qti.imsrtpservice</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IRTPService</name>
+            <instance>imsrtpservice</instance>
         </interface>
     </hal>
 </manifest>

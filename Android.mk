@@ -23,7 +23,7 @@
 # *not* include it on all devices, so it is safe even with hardware-specific
 # components.
 
-ifeq ($(TARGET_DEVICE),kuntao)
+ifeq ($(TARGET_DEVICE),lightphone2)
 
 include $(call all-subdir-makefiles)
 
